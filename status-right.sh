@@ -23,7 +23,7 @@ pwd+=(["script"]="${segments_path}/pwd.sh")
 pwd+=(["foreground"]="colour211")
 pwd+=(["background"]="colour89")
 pwd+=(["separator"]="${separator_left_bold}")
-#register_segment "pwd"
+# register_segment "pwd"
 
 declare -A mail_count
 mail_count+=(["script"]="${segments_path}/mail_count_maildir.sh")
@@ -32,28 +32,18 @@ mail_count+=(["script"]="${segments_path}/mail_count_maildir.sh")
 mail_count+=(["foreground"]="white")
 mail_count+=(["background"]="red")
 mail_count+=(["separator"]="${separator_left_bold}")
-register_segment "mail_count"
+# register_segment "mail_count"
 
 declare -A now_playing
-if [ "$PLATFORM" == "linux" ]; then
-	now_playing+=(["script"]="${segments_path}/np_mpd.sh")
-	#now_playing+=(["script"]="${segments_path}/np_mpd_simple.sh")
-	#now_playing+=(["script"]="${segments_path}/np_mocp.sh")
-	#now_playing+=(["script"]="${segments_path}/np_spotify_linux_wine.sh")
-	#now_playing+=(["script"]="${segments_path}/np_spotify_linux_native.sh")
-	#now_playing+=(["script"]="${segments_path}/np_rhythmbox.sh")
-	#now_playing+=(["script"]="${segments_path}/np_banshee.sh")
-	#now_playing+=(["script"]="${segments_path}/np_audacious.sh")
-	#now_playing+=(["script"]="${segments_path}/np_lastfm.sh")
-elif [ "$PLATFORM" == "mac" ]; then
-	now_playing+=(["script"]="${segments_path}/np_itunes_mac.sh")
-	#now_playing+=(["script"]="${segments_path}/np_spotify_mac")
-  	#now_playing+=(["script"]="${segments_path}/np_rdio_mac.sh")
+# now_playing+=(["script"]="${segments_path}/np_mpd.sh")
+# now_playing+=(["script"]="${segments_path}/np_itunes_mac.sh")
+now_playing+=(["script"]="${segments_path}/np_spotify_mac1.sh")
+#now_playing+=(["script"]="${segments_path}/np_rdio_mac.sh")
 
-fi
+
 if [[ ${now_playing["script"]} ]]; then
-	now_playing+=(["foreground"]="colour37")
-	now_playing+=(["background"]="colour234")
+	now_playing+=(["foreground"]="white")
+	now_playing+=(["background"]="brightred")
 	now_playing+=(["separator"]="${separator_left_bold}")
 	register_segment "now_playing"
 fi
@@ -63,31 +53,32 @@ cpu+=(["script"]="${segments_path}/cpu.sh")
 cpu+=(["foreground"]="colour136")
 cpu+=(["background"]="colour240")
 cpu+=(["separator"]="${separator_left_bold}")
-#register_segment "cpu"
+# register_segment "cpu"
 
 declare -A load
 load+=(["script"]="${segments_path}/load.sh")
 load+=(["foreground"]="colour167")
 load+=(["background"]="colour237")
 load+=(["separator"]="${separator_left_bold}")
-register_segment "load"
+# register_segment "load"
 
 declare -A battery
-if [ "$PLATFORM" == "mac" ]; then
-	battery+=(["script"]="${segments_path}/battery_mac.sh")
-else
-	battery+=(["script"]="${segments_path}/battery.sh")
-fi
-battery+=(["foreground"]="colour127")
-battery+=(["background"]="colour137")
+# if [ "$PLATFORM" == "mac" ]; then
+# 	battery+=(["script"]="${segments_path}/battery_mac.sh")
+# else
+# 	battery+=(["script"]="${segments_path}/battery.sh")
+# fi
+battery+=(["script"]="${segments_path}/battery_mac.sh")
+battery+=(["foreground"]="white")
+battery+=(["background"]="brightmagenta")
 battery+=(["separator"]="${separator_left_bold}")
-#register_segment "battery"
+register_segment "battery"
 
 declare -A weather
 weather+=(["script"]="${segments_path}/weather_yahoo.sh")
 #weather+=(["script"]="${segments_path}/weather_google.sh")
-weather+=(["foreground"]="colour255")
-weather+=(["background"]="colour37")
+weather+=(["foreground"]="white")
+weather+=(["background"]="cyan")
 weather+=(["separator"]="${separator_left_bold}")
 register_segment "weather"
 
@@ -102,25 +93,25 @@ fi
 
 declare -A date_day
 date_day+=(["script"]="${segments_path}/date_day.sh")
-date_day+=(["foreground"]="colour136")
-date_day+=(["background"]="colour235")
+date_day+=(["foreground"]="white")
+date_day+=(["background"]="brightyellow")
 date_day+=(["separator"]="${separator_left_bold}")
 register_segment "date_day"
 
 declare -A date_full
 date_full+=(["script"]="${segments_path}/date_full.sh")
-date_full+=(["foreground"]="colour136")
-date_full+=(["background"]="colour235")
+date_full+=(["foreground"]="white")
+date_full+=(["background"]="brightyellow")
 date_full+=(["separator"]="${separator_left_thin}")
-date_full+=(["separator_fg"]="default")
+date_full+=(["separator_fg"]="white")
 register_segment "date_full"
 
 declare -A time
 time+=(["script"]="${segments_path}/time.sh")
-time+=(["foreground"]="colour136")
-time+=(["background"]="colour235")
+time+=(["foreground"]="white")
+time+=(["background"]="brightyellow")
 time+=(["separator"]="${separator_left_thin}")
-time+=(["separator_fg"]="default")
+time+=(["separator_fg"]="white")
 register_segment "time"
 
 # Print the status line in the order of registration above.

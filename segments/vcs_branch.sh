@@ -9,9 +9,9 @@ tmux_path=$(get_tmux_cwd)
 cd "$tmux_path"
 
 branch_symbol="⭠"
-git_colour="colour5"
+git_colour="white"
 git_svn_colour="colour34"
-svn_colour="colour220"
+svn_colour="black"
 hg_colour="colour45"
 
 # Show git banch.
@@ -47,7 +47,7 @@ parse_git_branch() {
 		echo -n "$git_svn_colour"
 	fi
 	# TODO pass colour arguments as paramters/globals to segments?
-	echo "]${branch_symbol} #[fg=colour42]${branch}"
+	echo "]${branch_symbol} #[fg=white]${branch}"
 }
 
 # Show SVN branch.
@@ -66,7 +66,7 @@ parse_svn_branch() {
 	local svn_url=$(svn info 2>/dev/null | sed -ne 's#^URL: ##p')
 
 	local branch=$(echo $svn_url | sed -e 's#^'"${svn_root}"'##g' | egrep -o '(tags|branches)/[^/]+|trunk' | egrep -o '[^/]+$' | awk '{print $1}')
-	echo  "#[fg=${svn_colour}]${branch_symbol} #[fg=colour42]${branch}"
+	echo  "#[fg=${svn_colour}]${branch_symbol} #[fg=white]${branch}"
 }
 
 parse_hg_branch() {

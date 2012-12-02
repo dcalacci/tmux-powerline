@@ -1,6 +1,5 @@
-#!/usr/bin/env osascript
+#!/usr/bin/osascript
 # Returns the current playing song in Spotify for OSX
-
 
 tell application "System Events"
   set process_list to (name of every process)
