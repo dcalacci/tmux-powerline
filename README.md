@@ -1,3 +1,6 @@
+My Fork of tmux-powerline.  I found that a few of the segments didn't
+work on my preferred machine, so I changed stuff around to make it work.
+
 # tmux-powerline
 This is a set of scripts (segments) for making a nice and dynamic tmux statusbar where elements can come and disappears depending on events. I really like the look of [Lokaltog/vim-powerline](https://github.com/Lokaltog/vim-powerline) and I decided I wanted the same for tmux.
 
