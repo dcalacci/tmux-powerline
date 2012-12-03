@@ -27,7 +27,7 @@ case $(uname -s) in
                     echo $HEART_CONNECTED "$charge%"
                 else
                     if [[ $charge -lt 50 ]]; then
-                        echo -n "#[fg=red]"
+                        echo -n "#[fg=magenta]"
                     fi
                     echo $HEART_DISCONNECTED "$charge%"
                 fi
