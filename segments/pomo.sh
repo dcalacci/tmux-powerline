@@ -1,0 +1,1 @@
+cat ~/.pomo_stat

@@ -18,16 +18,17 @@ mute_status_check "right"
 # Segment
 # Comment/uncomment the register function call to enable or disable a segment.
 
+
 declare -A pwd
 pwd+=(["script"]="${segments_path}/pwd.sh")
-pwd+=(["foreground"]="colour211")
-pwd+=(["background"]="colour89")
+pwd+=(["foreground"]="white")
+pwd+=(["background"]="green")
 pwd+=(["separator"]="${separator_left_bold}")
 # register_segment "pwd"
 
 declare -A mail_count
-mail_count+=(["script"]="${segments_path}/mail_count_maildir.sh")
-#mail_count+=(["script"]="${segments_path}/mail_count_gmail.sh")
+# mail_count+=(["script"]="${segments_path}/mail_count_maildir.sh")
+mail_count+=(["script"]="${segments_path}/mail_count_gmail.sh")
 #mail_count+=(["script"]="${segments_path}/mail_count_apple_mail.sh")
 mail_count+=(["foreground"]="white")
 mail_count+=(["background"]="red")
@@ -45,7 +46,7 @@ if [[ ${now_playing["script"]} ]]; then
 	now_playing+=(["foreground"]="white")
 	now_playing+=(["background"]="brightred")
 	now_playing+=(["separator"]="${separator_left_bold}")
-	register_segment "now_playing"
+	# register_segment "now_playing"
 fi
 
 declare -A cpu
@@ -57,10 +58,10 @@ cpu+=(["separator"]="${separator_left_bold}")
 
 declare -A load
 load+=(["script"]="${segments_path}/load.sh")
-load+=(["foreground"]="colour167")
-load+=(["background"]="colour237")
+load+=(["foreground"]="white")
+load+=(["background"]="green")
 load+=(["separator"]="${separator_left_bold}")
-# register_segment "load"
+register_segment "load"
 
 declare -A battery
 # if [ "$PLATFORM" == "mac" ]; then
@@ -72,13 +73,13 @@ battery+=(["script"]="${segments_path}/battery_mac.sh")
 battery+=(["foreground"]="white")
 battery+=(["background"]="brightmagenta")
 battery+=(["separator"]="${separator_left_bold}")
-register_segment "battery"
+# register_segment "battery"
 
 declare -A weather
 weather+=(["script"]="${segments_path}/weather_yahoo.sh")
 #weather+=(["script"]="${segments_path}/weather_google.sh")
 weather+=(["foreground"]="white")
-weather+=(["background"]="cyan")
+weather+=(["background"]="magenta")
 weather+=(["separator"]="${separator_left_bold}")
 register_segment "weather"
 
@@ -96,7 +97,7 @@ date_day+=(["script"]="${segments_path}/date_day.sh")
 date_day+=(["foreground"]="white")
 date_day+=(["background"]="brightyellow")
 date_day+=(["separator"]="${separator_left_bold}")
-register_segment "date_day"
+# register_segment "date_day"
 
 declare -A date_full
 date_full+=(["script"]="${segments_path}/date_full.sh")
@@ -104,7 +105,7 @@ date_full+=(["foreground"]="white")
 date_full+=(["background"]="brightyellow")
 date_full+=(["separator"]="${separator_left_thin}")
 date_full+=(["separator_fg"]="white")
-register_segment "date_full"
+# register_segment "date_full"
 
 declare -A time
 time+=(["script"]="${segments_path}/time.sh")
@@ -112,7 +113,14 @@ time+=(["foreground"]="white")
 time+=(["background"]="brightyellow")
 time+=(["separator"]="${separator_left_thin}")
 time+=(["separator_fg"]="white")
-register_segment "time"
+# register_segment "time"
+
+declare -A pomo
+pomo+=(["script"]="${segments_path}/pomo.sh")
+pomo+=(["foreground"]="brightblue")
+pomo+=(["background"]="black")
+pomo+=(["separator"]="${separator_left_bold}")
+register_segment "pomo"
 
 # Print the status line in the order of registration above.
 print_status_line_right
