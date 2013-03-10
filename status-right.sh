@@ -120,8 +120,8 @@ pomo+=(["script"]="${segments_path}/pomo.sh")
 pomo+=(["foreground"]="brightblue")
 pomo+=(["background"]="black")
 pomo+=(["separator"]="${separator_left_bold}")
-register_segment "pomo"
-
+# register_segment "pomo"
+# 
 # Print the status line in the order of registration above.
 print_status_line_right
 
