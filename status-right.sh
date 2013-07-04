@@ -38,15 +38,15 @@ mail_count+=(["separator"]="${separator_left_bold}")
 declare -A now_playing
 # now_playing+=(["script"]="${segments_path}/np_mpd.sh")
 # now_playing+=(["script"]="${segments_path}/np_itunes_mac.sh")
-now_playing+=(["script"]="${segments_path}/np_spotify_mac1.sh")
-#now_playing+=(["script"]="${segments_path}/np_rdio_mac.sh")
+#now_playing+=(["script"]="${segments_path}/np_spotify_mac1.sh")
+now_playing+=(["script"]="${segments_path}/np_rdio_mac.sh")
 
 
 if [[ ${now_playing["script"]} ]]; then
 	now_playing+=(["foreground"]="white")
 	now_playing+=(["background"]="brightred")
 	now_playing+=(["separator"]="${separator_left_bold}")
-	# register_segment "now_playing"
+#	register_segment "now_playing"
 fi
 
 declare -A cpu
@@ -54,7 +54,7 @@ cpu+=(["script"]="${segments_path}/cpu.sh")
 cpu+=(["foreground"]="colour136")
 cpu+=(["background"]="colour240")
 cpu+=(["separator"]="${separator_left_bold}")
-# register_segment "cpu"
+#register_segment "cpu"
 
 declare -A load
 load+=(["script"]="${segments_path}/load.sh")
@@ -73,7 +73,7 @@ battery+=(["script"]="${segments_path}/battery_mac.sh")
 battery+=(["foreground"]="white")
 battery+=(["background"]="brightmagenta")
 battery+=(["separator"]="${separator_left_bold}")
-# register_segment "battery"
+register_segment "battery"
 
 declare -A weather
 weather+=(["script"]="${segments_path}/weather_yahoo.sh")
@@ -94,33 +94,33 @@ fi
 
 declare -A date_day
 date_day+=(["script"]="${segments_path}/date_day.sh")
-date_day+=(["foreground"]="white")
-date_day+=(["background"]="brightyellow")
+date_day+=(["foreground"]="yellow")
+date_day+=(["background"]="black")
 date_day+=(["separator"]="${separator_left_bold}")
-# register_segment "date_day"
+register_segment "date_day"
 
 declare -A date_full
 date_full+=(["script"]="${segments_path}/date_full.sh")
-date_full+=(["foreground"]="white")
-date_full+=(["background"]="brightyellow")
+date_full+=(["foreground"]="yellow")
+date_full+=(["background"]="black")
 date_full+=(["separator"]="${separator_left_thin}")
-date_full+=(["separator_fg"]="white")
-# register_segment "date_full"
+date_full+=(["separator_fg"]="brightyellow")
+register_segment "date_full"
 
 declare -A time
 time+=(["script"]="${segments_path}/time.sh")
-time+=(["foreground"]="white")
-time+=(["background"]="brightyellow")
+time+=(["foreground"]="yellow")
+time+=(["background"]="black")
 time+=(["separator"]="${separator_left_thin}")
-time+=(["separator_fg"]="white")
-# register_segment "time"
+time+=(["separator_fg"]="brightyellow")
+register_segment "time"
 
 declare -A pomo
 pomo+=(["script"]="${segments_path}/pomo.sh")
 pomo+=(["foreground"]="brightblue")
 pomo+=(["background"]="black")
 pomo+=(["separator"]="${separator_left_bold}")
-# register_segment "pomo"
+register_segment "pomo"
 # 
 # Print the status line in the order of registration above.
 print_status_line_right
